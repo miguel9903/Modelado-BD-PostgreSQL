@@ -1,0 +1,92 @@
+INSERT INTO PERSONA_CONTACTO(nombre, telefono) VALUES('Juan David Acero Rojas', '3104105678');
+INSERT INTO PERSONA_CONTACTO(nombre, telefono) VALUES('Lizeth Vanessa Leon Ovalle', '3125646558');
+INSERT INTO PERSONA_CONTACTO(nombre, telefono) VALUES('Andres Felipe Martinez Duarte', '3108974512');
+INSERT INTO PERSONA_CONTACTO(nombre, telefono) VALUES('Julian David Ovalle Diaz', '3147891236');
+INSERT INTO PERSONA_CONTACTO(nombre, telefono) VALUES('Ana Maria Gomez Ricaurte', '3231457895');
+INSERT INTO PERSONA_CONTACTO(nombre, telefono) VALUES('Gabriela Alejandra Gonzalez Heredia', '3124101189');
+INSERT INTO PERSONA_CONTACTO(nombre, telefono) VALUES('Hector Fabian Garcia Aponte', '3154123655');
+INSERT INTO PERSONA_CONTACTO(nombre, telefono) VALUES('Jose Hernesto Mendoza Bermudez', '3101236548');
+INSERT INTO PERSONA_CONTACTO(nombre, telefono) VALUES('Miguel Fernando Niño Roa', '3132124589');
+INSERT INTO PERSONA_CONTACTO(nombre, telefono) VALUES('Jenny Julieth Morales Velandia', '3225287963');
+
+
+INSERT INTO PROVEEDOR(nombre, direccion) VALUES('MUEBLES SAN JOSE', 'Cra. 60 # 3-55');
+INSERT INTO PROVEEDOR(nombre, direccion) VALUES('DISTRIMUEBLES', 'Cll. 1D #40D-13');
+INSERT INTO PROVEEDOR(nombre, direccion) VALUES('MUEBLARTEC', 'Cra. 69 # 18a-83');
+INSERT INTO PROVEEDOR(nombre, direccion) VALUES('MUEBLES BACATA', 'Cll. 18 # 65b-22');
+INSERT INTO PROVEEDOR(nombre, direccion) VALUES('AMOBLART', 'Cra. 32b # 2a-23');
+INSERT INTO PROVEEDOR(nombre, direccion) VALUES('MUEBLES SAN LORENZO', 'Cll. 16i # 12-35');
+INSERT INTO PROVEEDOR(nombre, direccion) VALUES('MUEBLES ABC', 'Cll. 18S # 38-42');
+INSERT INTO PROVEEDOR(nombre, direccion) VALUES('EXPERTMUEBLE', 'Cra. 116 # 14B-90');
+INSERT INTO PROVEEDOR(nombre, direccion) VALUES('MUEBLES NOVA', 'Cra. 56 # 9-46');
+INSERT INTO PROVEEDOR(nombre, direccion) VALUES('MADERPLAST', 'Cra. 60 # 9-26');
+
+
+INSERT INTO TELEFONO_PROVEEDOR VALUES(1, '4030303');
+INSERT INTO TELEFONO_PROVEEDOR VALUES(2, '2301129');
+INSERT INTO TELEFONO_PROVEEDOR VALUES(3, '2604667');
+INSERT INTO TELEFONO_PROVEEDOR VALUES(4, '2411085');
+INSERT INTO TELEFONO_PROVEEDOR VALUES(5, '2010101');
+INSERT INTO TELEFONO_PROVEEDOR VALUES(6, '7799400');
+INSERT INTO TELEFONO_PROVEEDOR VALUES(7, '7447028');
+INSERT INTO TELEFONO_PROVEEDOR VALUES(8, '7139228');
+INSERT INTO TELEFONO_PROVEEDOR VALUES(9, '4855555');
+INSERT INTO TELEFONO_PROVEEDOR VALUES(10, '5719109');
+
+
+INSERT INTO MATERIAL(material) VALUES('Madera de Cedro');
+INSERT INTO MATERIAL(material) VALUES('Madera de Abeto');
+INSERT INTO MATERIAL(material) VALUES('Madera de Caoba');
+INSERT INTO MATERIAL(material) VALUES('Madera de Abedul');
+INSERT INTO MATERIAL(material) VALUES('Plastico');
+INSERT INTO MATERIAL(material) VALUES('Aluminio');
+
+
+INSERT INTO COLOR(color) VALUES('Cerezo');
+INSERT INTO COLOR(color) VALUES('Negro');
+INSERT INTO COLOR(color) VALUES('Gris claro');
+INSERT INTO COLOR(color) VALUES('Mucali');
+INSERT INTO COLOR(color) VALUES('Nogal');
+INSERT INTO COLOR(color) VALUES('Blanco');
+INSERT INTO COLOR(color) VALUES('Rojo');
+INSERT INTO COLOR(color) VALUES('Verde');
+INSERT INTO COLOR(color) VALUES('Beige');
+INSERT INTO COLOR(color) VALUES('Azul');
+
+
+INSERT INTO TIPO_MUEBLE(tipo_mueble) VALUES('Muebles de Cocina');
+INSERT INTO TIPO_MUEBLE(tipo_mueble) VALUES('Muebles de Sala');
+INSERT INTO TIPO_MUEBLE(tipo_mueble) VALUES('Muebles de Banio');
+INSERT INTO TIPO_MUEBLE(tipo_mueble) VALUES('Muebles de Dormitorio');
+INSERT INTO TIPO_MUEBLE(tipo_mueble) VALUES('Muebles de Bar');
+INSERT INTO TIPO_MUEBLE(tipo_mueble) VALUES('Muebles Empresariales');
+INSERT INTO TIPO_MUEBLE(tipo_mueble) VALUES('Muebles de Oficina y Estudio');
+INSERT INTO TIPO_MUEBLE(tipo_mueble) VALUES('Muebles de Exterior');
+INSERT INTO TIPO_MUEBLE(tipo_mueble) VALUES('Muebles de Garaje');
+INSERT INTO TIPO_MUEBLE(tipo_mueble) VALUES('Muebles Infantiles');
+
+
+INSERT INTO MUEBLE(id_tipo_mueble, id_material, largo, ancho, alto, id_color, precio_unitario, descripcion, stock) VALUES(2, 1, 293, 205, 85, 9, 1650000, 'Sofá Scandinavo Jurgen 3 Puestos', 130);
+INSERT INTO MUEBLE(id_tipo_mueble, id_material, largo, ancho, alto, id_color, precio_unitario, descripcion, stock) VALUES(2, 4, 160, 240, 65, 5, 1130000, 'Sofá Esquinero Miranda Izquierdo 5 Puestos', 30);
+INSERT INTO MUEBLE(id_tipo_mueble, id_material, largo, ancho, alto, id_color, precio_unitario, descripcion, stock) VALUES(2, 2, 167, 146, 101, 2, 1650000, 'Sillón Reclinable Imperial 3 Puestose', 230);
+INSERT INTO MUEBLE(id_tipo_mueble, id_material, largo, ancho, alto, id_color, precio_unitario, descripcion, stock) VALUES(2, 3, 115, 69, 45, 1, 398000, 'Set Mesa Centro y Mesa Auxiliar Katrina', 85);
+INSERT INTO MUEBLE(id_tipo_mueble, id_material, largo, ancho, alto, id_color, precio_unitario, descripcion, stock) VALUES(2, 6, 95, 55, 45, 2, 650000, 'Mesa de Centro Greca', 45);
+
+INSERT INTO CLIENTE(nombre, direccion, correo, fecha_ingreso) VALUES('Juan Gabriel Rojas Peralta', 'Cra. 23 # 15A-55', 'juangrojas99@hotmail.com', '2019-03-04');
+INSERT INTO CLIENTE(nombre, direccion, correo, fecha_ingreso) VALUES('Andres Felipe Suarez Velandia', 'Cra. 5 0# 12-33', 'andresvelandia.26@hotmsil.com', '2019-03-01');
+INSERT INTO CLIENTE(nombre, direccion, correo, fecha_ingreso) VALUES('Ana Sofia Leon Ovalle', 'Cll. 100 # 13B-43', 'asofialeon99@gmail.com', '2019-03-02');
+INSERT INTO CLIENTE(nombre, direccion, correo, fecha_ingreso) VALUES('Juan Carlos Aponte Velasquez', 'Cra. 45 # 19A-23', 'juancaaponte26@hotmail.com', '2019-02-04');
+INSERT INTO CLIENTE(nombre, direccion, correo, fecha_ingreso) VALUES('Laura Camila Torres Torres', 'Cra. 20 # 11-33', 'asd1126@gmail.com', '2019-01-04');
+
+INSERT INTO TELEFONO_CLIENTE VALUES(1, '3201457845');
+INSERT INTO TELEFONO_CLIENTE VALUES(2, '3125645478');
+INSERT INTO TELEFONO_CLIENTE VALUES(3, '3147895410');
+INSERT INTO TELEFONO_CLIENTE VALUES(4, '3132458712');
+INSERT INTO TELEFONO_CLIENTE VALUES(5, '3274512357');
+
+
+INSERT INTO VENDEDOR(nombre, telefono) VALUES('Luis Carlos Salazar Gomez', '3145210125');
+INSERT INTO VENDEDOR(nombre, telefono) VALUES('Tatiana Alejandra Velasquez Rodriguez', '3187451245');
+INSERT INTO VENDEDOR(nombre, telefono) VALUES('Karen Sofia Arevalo Aponte', '3214512458');
+INSERT INTO VENDEDOR(nombre, telefono) VALUES('Ivan Dario Salas Rivera', '3112847515');
+INSERT INTO VENDEDOR(nombre, telefono) VALUES('Marco Antonio Suarez Diaz', '3125412478');

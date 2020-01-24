@@ -1,0 +1,179 @@
+create database prontomueble;
+
+\c prontomueble
+
+CREATE SEQUENCE secProveedor
+START 1
+INCREMENT 1;
+
+CREATE TABLE PROVEEDOR(
+id integer NOT NULL DEFAULT nextval('secProveedor'),
+nombre varchar(50),
+direccion varchar(25),
+estado varchar(10) DEFAULT 'activo',
+PRIMARY KEY(id)
+);
+
+
+
+
+CREATE TABLE TELEFONO_PROVEEDOR(
+id_proveedor integer NOT NULL,
+telefono varchar(15) NOT NULL,
+PRIMARY KEY(id_proveedor,telefono),
+FOREIGN KEY(id_proveedor) REFERENCES PROVEEDOR(id)
+);
+
+
+
+CREATE SEQUENCE secPerProveedor
+START 1
+INCREMENT 1;
+
+CREATE TABLE PERSONA_CONTACTO(
+id integer NOT NULL DEFAULT nextval('secPerProveedor'),
+nombre varchar(50),
+telefono varchar(15),
+id_proveedor integer,
+PRIMARY KEY(id),
+FOREIGN KEY(id_proveedor) REFERENCES PROVEEDOR(id)
+);
+
+
+CREATE SEQUENCE secMaterial
+START 1
+INCREMENT 1;
+
+CREATE TABLE MATERIAL(
+id integer NOT NULL DEFAULT nextval('secMaterial'),
+material varchar(20),
+PRIMARY KEY(id)
+);
+
+
+
+CREATE SEQUENCE secColor
+START 1
+INCREMENT 1;
+
+CREATE TABLE COLOR(
+id integer NOT NULL DEFAULT nextval('secColor'),
+color varchar(15),
+PRIMARY KEY(id)
+);
+
+
+
+CREATE SEQUENCE secTipoMueble
+START 1
+INCREMENT 1;
+
+CREATE TABLE TIPO_MUEBLE(
+id integer NOT NULL DEFAULT nextval('secTipoMueble'),
+tipo_mueble varchar(35),
+PRIMARY KEY(id)
+);
+
+
+
+CREATE SEQUENCE secMueble
+START 1
+INCREMENT 1;
+
+CREATE TABLE MUEBLE(
+id integer NOT NULL DEFAULT nextval('secMueble'),
+id_tipo_mueble integer,
+id_material integer,
+largo integer,
+ancho integer,
+alto integer,
+id_color integer,
+precio_unitario integer,
+descripcion varchar(100),
+stock integer,
+estado varchar(10) DEFAULT 'disponible',
+PRIMARY KEY(id),
+FOREIGN KEY(id_tipo_mueble) REFERENCES TIPO_MUEBLE(id),
+FOREIGN KEY(id_material) REFERENCES MATERIAL(id),
+FOREIGN KEY(id_color) REFERENCES COLOR(id)
+);
+
+
+CREATE TABLE PROVEER(
+id_proveedor integer NOT NULL,
+id_mueble integer NOT NULL,
+PRIMARY KEY(id_proveedor,id_mueble),
+FOREIGN KEY(id_proveedor) REFERENCES PROVEEDOR(id),
+FOREIGN KEY(id_mueble) REFERENCES MUEBLE(id)
+);
+
+
+
+CREATE SEQUENCE secVendedor
+START 1
+INCREMENT 1;
+
+CREATE TABLE VENDEDOR(
+id integer NOT NULL DEFAULT nextval('secVendedor'),
+nombre varchar(50),
+telefono varchar(15),
+estado varchar(10) DEFAULT 'activo',
+PRIMARY KEY(id)
+);
+
+
+
+
+CREATE SEQUENCE secCliente
+START 1
+INCREMENT 1;
+
+CREATE TABLE CLIENTE(
+id integer NOT NULL DEFAULT nextval('secCliente'),
+nombre varchar(50),
+direccion varchar(25),
+correo varchar(50),
+estado varchar(10) DEFAULT 'activo',
+fecha_ingreso date,
+PRIMARY KEY(id)
+);
+
+
+
+CREATE TABLE TELEFONO_CLIENTE(
+id_cliente integer NOT NULL,
+telefono varchar(15) NOT NULL,
+PRIMARY KEY(id_cliente ,telefono),
+FOREIGN KEY(id_cliente) REFERENCES CLIENTE(id)
+);
+
+
+
+CREATE SEQUENCE secVenta
+START 1
+INCREMENT 1;
+
+CREATE TABLE VENTA(
+id integer NOT NULL DEFAULT nextval('secVenta'),
+fecha date,
+subtotal integer,
+descuento integer,
+total integer,
+id_vendedor integer,
+id_cliente integer,
+PRIMARY KEY(id),
+FOREIGN KEY(id_vendedor) REFERENCES VENDEDOR(id),
+FOREIGN KEY(id_cliente) REFERENCES CLIENTE(id)
+);
+
+
+
+
+CREATE TABLE DETALLE(
+id_mueble integer NOT NULL,
+id_venta integer NOT NULL,
+cantidad integer,
+PRIMARY KEY(id_mueble,id_venta),
+FOREIGN KEY(id_mueble) REFERENCES MUEBLE(id),
+FOREIGN KEY(id_venta) REFERENCES VENTA(id)
+);
